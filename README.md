@@ -6,16 +6,16 @@ Neste repositório se encontram todos os códigos, banco de dados e análises re
 
 Os dados utilizados neste repositório são dados artificiais gerados pelo simulador AMLSim, [disponível aqui](https://github.com/IBM/AMLSim). A partir de diferentes parametrizações 2 cenários foram gerados, cada um com 1.000 amostras:
 
-||           Parâmetro          | Cenário 1 | Cenário 2 |
-|:-----------------------------:|:---------:|:---------:|
-| Horizonte temporal (em horas) |     1.000 | 1.000.000 |
-| Número de clientes            |       600 |   100.000 |
-| Número de fraudadores         |         5 |       150 |
-| Número de bancos              |         4 |        50 |
-| Número de transações          |     10000 | 5.000.000 |
-| Probabilidade de Fraude       |     0,001 |   0,00001 |
-| Limite de transferência       |    10.000 |    10.000 |
-| Conjunto de dados gerados     |      1000 |       100 |
+|           Parâmetro           	| Cenário 1 	| Cenário 2 	|
+|:-----------------------------:	|:---------:	|:---------:	|
+| Horizonte temporal (em horas) 	|     1.000 	| 1.000.000 	|
+| Número de clientes            	|       600 	|   100.000 	|
+| Número de fraudadores         	|         5 	|       150 	|
+| Número de bancos              	|         4 	|        50 	|
+| Número de transações          	|     10000 	| 5.000.000 	|
+| Probabilidade de Fraude       	|     0,001 	|   0,00001 	|
+| Limite de transferência       	|    10.000 	|    10.000 	|
+| Conjunto de dados gerados     	|      1000 	|       100 	|
 
 No script de execução *results.py* cada cenário é inserido de maneira compactada em formato .zip.
 
