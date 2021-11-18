@@ -17,7 +17,9 @@ Os dados utilizados neste repositório são dados artificiais gerados pelo simul
 | Limite de transferência       	|    10.000 	|    10.000 	|
 | Conjunto de dados gerados     	|      1000 	|       100 	|
 
-No script de execução *results.py* cada cenário é inserido de maneira compactada em formato .zip.
+Devido ao limite de armazenamento existente em repositórios do GitHub os dados disponibilizados aqui possuem apenas alguns subconjuntos. Para ter acesso a todos os conjuntos de dados gerados entre em contato através do email osaraivamatheus@gmail.com.
+
+Nos scripts de execução *ML_MODELS.py* e *FRBS.R* cada cenário é inserido de maneira compactada em formato .zip.
 
 ## Modelos
 
