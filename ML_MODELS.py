@@ -12,14 +12,14 @@ import warnings
 warnings.filterwarnings("ignore")
 
 #Carregando dados
-zip_file = ZipFile('Dados/cenario2.zip')
+zip_file = ZipFile('Dados/cenario1.zip')
 dados = {text_file.filename: pd.read_csv(zip_file.open(text_file.filename))
        for text_file in zip_file.infolist()
        if text_file.filename.endswith('.csv')}
 
 # dados = {text_file.filename: pd.read_csv(zip_file.open(text_file.filename))
 #        for text_file in zip_file.infolist()
-#        if text_file.filename in ['cenario3/resultado_112.csv']}
+#        if text_file.filename in ['cenario1/cd_1.csv']}
 
 nome = list(dados.keys())[0].split('/')[0] + '.csv'
 

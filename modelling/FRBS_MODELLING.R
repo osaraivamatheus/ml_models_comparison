@@ -1,11 +1,11 @@
 # CARREGANDO PACOTES ------------------------------------------------------
 library(frbs); library(tidyverse);library(MLmetrics); library(tidymodels)
-library(ROCR)
+library(ROCR); 
 
 
 # FUNCOES
 load_df = function(filename, amostras){
-  fnames = paste0(filename,'/resultado_',amostras,'.csv')
+  fnames = paste0(filename,'/cd_',amostras,'.csv')
   my_data <- list()
   for (i in seq_along(fnames)) {
     csv = paste0('Dados/',filename,'.zip')
@@ -138,32 +138,38 @@ run_through_samples = function(cenario){
   results = as.data.frame(results)
   names(results) = c('AUC', 'RECALL', 'FHALF', 'F1', 'F2','TN','FN','FP','TP',
                      'MODEL', 'N_NEG', 'N_POS')
+  name_out = names(cenario)[1]
+  name_out = substr(name_out, start = 1, stop = 8)
+  
   
   for (cd in names(cenario)) {
-    
     df = cenario[[cd]]
     #dados de treino e de teste
     df = pre_processing(df)
-    
+
     # Pular amostras que não contém as duas classes
     nclasses_train = length(unique(df[[2]]))
     nclasses_test = length(unique(df[[3]]$isFraud))
-      
+
     if((nclasses_train < 2) | (nclasses_test < 2)){next}
-    
+
     #Modelagem e resultados
     df_tmp = fit_fuzzy_model(X_train=df[[1]],
                              y_train=df[[2]],
                              test=df[[3]])
     df_tmp$AMOSTRA = cd
-    
+
     results = rbind(results, df_tmp)
     print(cd)
-    write.csv(results, file='Resultados/frbs_results_tmp_cenario2.csv', row.names = F)
+    
+    output_tmp = paste0('Resultados/frbs_results_tmp_',name_out,'.csv')
+    print(output_tmp)
+    write.csv(results, file=output_tmp, row.names = F)
     
   }
   
-  write.csv(results, file='Resultados/FRBS_results_cenario_2.csv', row.names = F)
+  output = paste0('Resultados/FRBS_results_',name_out,'.csv')
+  write.csv(results, file=output, row.names = F)
   return(results)
   
   

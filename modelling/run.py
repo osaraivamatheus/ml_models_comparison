@@ -48,7 +48,7 @@ def run_through_samples(cenario, over_sampling=True, prop=.2):
         
         nome = list(cenario.keys())[0]
         nome = nome.split('/')[0] + '.csv'
-        pd.concat(results, ignore_index=True).to_csv('Resultados/resultados_preliminares_'+nome, index=False)
+        pd.concat(results, ignore_index=True).to_csv('Resultados/ML_MODELS_'+nome, index=False)
 
         
     final = pd.concat(results, ignore_index=True)

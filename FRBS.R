@@ -2,7 +2,6 @@
 
 source("modelling/FRBS_MODELLING.R")
 
-d = load_df(filename='cenario15', amostras=c(1:100))
+d = load_df(filename='cenario2', amostras=c(1:1))
 
-# write.csv(d[[1]], 'amostra104.csv', row.names=F)
-r = run_through_samples(d)
+run_through_samples(d)
