@@ -31,18 +31,25 @@ os modelos utilizados neste projeto são:
 - Extreme Gradiente Boosting Machine (XGB)
 - Sistemas Baseados em Regras Fuzzy (SBRF)
 
-Os ajustes, predições e avaliações de desempenho de todos os modelos, com excessão do modelo SBRF, são feitos através da biblioteca [Scikit-learn](https://scikit-learn.org/stable/). O modelo SBRF é ajustado e executado sob a liguagem de programação R, através da utilzação dos pacotes [frbs](https://cran.r-project.org/web/packages/frbs/frbs.pdf) e  [Tidyverse](https://www.tidyverse.org/).
 
 ## Estrutura
 
-A execução deste projeto é dada através dos arquivos *ML_MODELS.py* e *FRBS.R*, que por carregam e executam os seguintes scrips em python e R, contidos no diretório "/modelling/":
+Por causa de facilidades existêntes em cada linguagens, além de pacotes específicos, as modelagens são realizadas através das linguagens de programação Python e R.
+
+### Modelagens utilizando Python
+
+Com excessão dos Sistemas Baseados em Regras Fuzzy, todos os demais modelos executados em linguagem python. Os ajustes, predições e avaliações de desempenho de todos os modelos, são feitos através da biblioteca [Scikit-learn](https://scikit-learn.org/stable/).  
+
+### Modelagens utilizando R
+
+O modelo SBRF é ajustado e executado sob a liguagem de programação R, através da utilzação dos pacotes [frbs](https://cran.r-project.org/web/packages/frbs/frbs.pdf) e  [Tidyverse](https://www.tidyverse.org/).
+
+### Integração de códigos
+
+A execução deste projeto é dada através dos arquivos *ML_MODELS.py* e *FRBS.R*, que carregam e executam os seguintes scrips em python e R, contidos no diretório "/modelling/":
 - **pre_process.py**: Rotina criada para o tratamento de dados amostrais e separação dos mesmos em cojuntos de treino e de teste.
 - **fit_models.py**: Rotina criada para ajustar modelos e gerar os resultados referentes aos seus desempenhos em predição, sob as métricas de AUC, Acurácia Balanceada, F1-score e F2-score. 
 - **run.py**: Este script carrega e executa os scripts anteriores em um conjunto de amostras. Parte deste script carrega parâmetros de modelos já hiperparametrizados, que se encontram no diretório "/Hiperparametrizados/".
 - **FRBS_MODELLING.R**: Script para executar os modelos baseados em regras fuzzy.
 
-O arquivo *results.py* é responsável pela integração dos demais scripts, parametrização e execução dos modelos propostos (exceto o SBRF). Durante sua execução uma tabela em formato .csv é gerada, permintindo análises dos resultados parciais enquanto todo o conjunto de amostras ainda não foi finalizado. Ao fim de sua execução, uma tabela final em formato .csv é gerada com todos os resultados de todos os modelos em todas as amostras; armazeanada no diretório "/Resultados/".
-
-## Análises
-
-No diretório "/Resultados/" se encontram os arquivos gerados pelo script "results.py" e o jupyter notebook "analise_inicial.ipynb" que contém uma análise de uma das amostras e também do desempenho dos modelos
+Os arquivo *ML_models.py* e *FRBS.R* são responsáveis pela integração dos demais scripts, parametrização e execução dos modelos propostos. Durante sua execução uma tabela em formato .csv é gerada, permintindo análises dos resultados parciais enquanto todo o conjunto de amostras ainda não foi finalizado. Ao fim de sua execução, uma tabela final em formato .csv é gerada com todos os resultados de todos os modelos em todas as amostras; armazeanada no diretório "/Resultados/".
