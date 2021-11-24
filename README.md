@@ -4,7 +4,7 @@ Neste repositório se encontram todos os códigos, banco de dados e análises re
 
 ## Dados
 
-Os dados utilizados neste repositório são dados artificiais gerados pelo simulador AMLSim, [disponível aqui](https://github.com/IBM/AMLSim). A partir de diferentes parametrizações 2 cenários foram gerados, cada um com 1.000 amostras:
+Os dados utilizados neste repositório são dados artificiais gerados pelo simulador AMLSim, [disponível aqui](https://github.com/EdgarLopezPhD/PaySim). A partir de diferentes parametrizações 2 cenários foram gerados, cada um com 1.000 amostras:
 
 |           Parâmetro           	| Cenário 1 	| Cenário 2 	|
 |:-----------------------------:	|:---------:	|:---------:	|
