@@ -23,7 +23,7 @@ Nos scripts de execução *ML_MODELS.py* e *FRBS.R* cada cenário é inserido de
 
 ## Modelos
 
-os modelos utilizados neste projeto são:
+Os modelos utilizados neste projeto são:
 - Regressão Logística
 - Random Forests
 - Redes Neurais Artificiais (MLP)
